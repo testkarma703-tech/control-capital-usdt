@@ -1,0 +1,17 @@
+{
+  "name": "USDT Control Ultra",
+  "short_name": "USDT Control",
+  "description": "Calculator și tracker local pentru conturi, tranzacții, bonusuri și recalibrare.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0c0f17",
+  "theme_color": "#0c0f17",
+  "lang": "ro",
+  "categories": ["finance", "productivity"],
+  "icons": [
+    {"src":"icon-192.png","sizes":"192x192","type":"image/png","purpose":"any maskable"},
+    {"src":"icon-512.png","sizes":"512x512","type":"image/png","purpose":"any maskable"}
+  ]
+}
