@@ -1,0 +1,42 @@
+name: Fix UTF-8 mojibake
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fix:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Repair mojibake in index.html
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          p = Path('index.html')
+          s = p.read_text(encoding='utf-8')
+          markers = set('ÃÂâðïÈ')
+          def repair_token(t):
+              try:
+                  y = t.encode('cp1252').decode('utf-8')
+              except (UnicodeEncodeError, UnicodeDecodeError):
+                  return t
+              old = sum(c in markers for c in t)
+              new = sum(c in markers for c in y)
+              return y if new < old else t
+          fixed = ' '.join(repair_token(t) for t in s.split(' '))
+          if fixed != s:
+              p.write_text(fixed, encoding='utf-8', newline='')
+          PY
+      - name: Commit repaired file
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add index.html
+          git diff --cached --quiet && exit 0
+          git commit -m 'Fix UTF-8 encoding in index.html'
+          git push
