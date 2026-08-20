@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#080b14">
-<title>USDT Control Ultra â€” FINAL</title>
+<title>USDT Control Ultra — FINAL</title>
 <style>
 :root{--bg:#070a12;--card:#111827;--card2:#0b1220;--line:#26344e;--txt:#f5f7fb;--mut:#8f9db4;--purple:#7657ff;--green:#35d07f;--red:#ff6874;--gold:#f4c453;--blue:#5b9cff}
 *{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 15% 0,#251957 0,#080b14 35%,#05070d 100%);color:var(--txt);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;padding:12px 12px 92px}.app{max-width:950px;margin:auto}
@@ -27,65 +27,65 @@ input,select{width:100%;background:#080e18;color:#fff;border:1px solid var(--lin
 </head>
 <body><div class="app">
 <section class="card">
- <div class="brand"><div class="logo">â‚®</div><div><div class="eyebrow">USDT â€¢ PRECISION MONITOR</div><div class="title">Control Ultra FINAL</div><div class="muted">Calcul compus â€¢ recalibrare â€¢ sold real â€¢ proiecÈ›ie</div></div></div>
+ <div class="brand"><div class="logo">₮</div><div><div class="eyebrow">USDT • PRECISION MONITOR</div><div class="title">Control Ultra FINAL</div><div class="muted">Calcul compus • recalibrare • sold real • proiecție</div></div></div>
 </section>
 
-<section class="card"><div class="row"><b>Conturile mele</b><button class="primary" onclick="newAccount()">ï¼‹ Cont nou</button></div><div id="accounts" class="accounts" style="margin-top:9px"></div></section>
+<section class="card"><div class="row"><b>Conturile mele</b><button class="primary" onclick="newAccount()">＋ Cont nou</button></div><div id="accounts" class="accounts" style="margin-top:9px"></div></section>
 
 <section id="dash" class="card"></section>
 
 <section class="card">
- <div class="row"><b>ðŸ§® Calculator & recalibrare</b><span class="muted">motor unic de calcul</span></div>
+ <div class="row"><b>🧮 Calculator & recalibrare</b><span class="muted">motor unic de calcul</span></div>
  <div class="grid" style="margin-top:10px">
-  <div class="full"><label>Sold / bazÄƒ iniÈ›ialÄƒ</label><input id="fStart" type="number" step="0.000001"></div>
-  <div><label>Procent cÃ¢È™tig %</label><input id="fPct" type="number" step="0.000001"></div>
+  <div class="full"><label>Sold / bazÄƒ inițială</label><input id="fStart" type="number" step="0.000001"></div>
+  <div><label>Procent câștig %</label><input id="fPct" type="number" step="0.000001"></div>
   <div><label>Divizor</label><input id="fDiv" type="number" step="0.000001"></div>
-  <div><label>TranzacÈ›ii normale / zi</label><input id="fNormal" type="number" min="0" step="1"></div>
-  <div><label>TranzacÈ›ii Ã®n plus / zi</label><input id="fExtra" type="number" min="0" step="1"></div>
+  <div><label>Tranzacții normale / zi</label><input id="fNormal" type="number" min="0" step="1"></div>
+  <div><label>Tranzacții în plus / zi</label><input id="fExtra" type="number" min="0" step="1"></div>
   <div><label>Total zile</label><input id="fDays" type="number" min="1" step="1"></div>
-  <div><label>Data Ã®nceperii</label><input id="fDate" type="date"></div>
-  <div class="full"><label>ðŸ’° Sold real actual</label><input id="fReal" type="number" step="0.000001" placeholder="Ex. 2235"></div>
+  <div><label>Data începerii</label><input id="fDate" type="date"></div>
+  <div class="full"><label>💰 Sold real actual</label><input id="fReal" type="number" step="0.000001" placeholder="Ex. 2235"></div>
  </div>
  <div class="toolbar" style="margin-top:10px">
   <button class="gold" onclick="applySettings()">RecalculeazÄƒ tot</button>
-  <button class="primary" onclick="recalibrate()">ðŸ”„ RecalibreazÄƒ de la soldul real</button>
-  <button onclick="resetRecalibration()">â†© Revino la calculul original</button>
+  <button class="primary" onclick="recalibrate()">🔄 RecalibreazÄƒ de la soldul real</button>
+  <button onclick="resetRecalibration()">↩ Revino la calculul original</button>
  </div>
  <div id="calcMessage" class="notice"></div>
 </section>
 
 <section class="card">
- <div class="row"><b>ðŸ“Š Cele 3 valori importante</b><span class="muted">nu se confundÄƒ Ã®ntre ele</span></div>
+ <div class="row"><b>📊 Cele 3 valori importante</b><span class="muted">nu se confundÄƒ între ele</span></div>
  <div class="three">
-  <div class="v today"><small>Actual azi Â· teoretic</small><strong id="vToday">0,0000</strong></div>
+  <div class="v today"><small>Actual azi · teoretic</small><strong id="vToday">0,0000</strong></div>
   <div class="v real"><small>Sold real pe cont</small><strong id="vReal">0,0000</strong></div>
-  <div class="v final"><small>ProiecÈ›ie finalÄƒ</small><strong id="vFinal">0,0000</strong></div>
+  <div class="v final"><small>Proiecție finalÄƒ</small><strong id="vFinal">0,0000</strong></div>
  </div>
  <div id="difference" class="alert" style="margin-top:9px"></div>
 </section>
 
-<section class="card"><div class="row"><b>ðŸŽ Bonusuri</b><button onclick="addBonus()">ï¼‹ Bonus</button></div><div id="bonuses"></div></section>
+<section class="card"><div class="row"><b>ðŸŽ Bonusuri</b><button onclick="addBonus()">＋ Bonus</button></div><div id="bonuses"></div></section>
 
 <section class="card">
- <div class="row"><b>âž• TranzacÈ›ii Ã®n plus pe zile</b><button onclick="toggleExtras()">Configurare</button></div>
+ <div class="row"><b>➕ Tranzacții în plus pe zile</b><button onclick="toggleExtras()">Configurare</button></div>
  <div id="extras" class="hidden" style="margin-top:9px"></div>
 </section>
 
 <section class="card">
- <div class="row"><b>ðŸ“‹ Istoric tranzacÈ›ii</b><button onclick="exportCSV()">â‡© CSV</button></div>
+ <div class="row"><b>📋 Istoric tranzacții</b><button onclick="exportCSV()">⇩ CSV</button></div>
  <div class="toolbar" style="margin-top:9px"><input id="search" placeholder="CautÄƒ..." oninput="renderTable()"><select id="dayFilter" onchange="renderTable()"><option value="all">Toate zilele</option></select></div>
  <div id="table" class="table" style="margin-top:9px"></div>
 </section>
 
 <section class="card">
- <div class="row"><b>ðŸ’¾ Date & backup</b></div>
- <div class="toolbar" style="margin-top:9px"><button onclick="exportBackup()">â‡§ Backup JSON</button><button onclick="document.getElementById('backup').click()">â‡© Restaurare JSON</button><input id="backup" class="hidden" type="file" accept="application/json" onchange="importBackup(event)"></div>
- <div class="notice">Backup-ul JSON este recomandat Ã®nainte de orice modificare majorÄƒ. AplicaÈ›ia salveazÄƒ È™i local, iar IndexedDB este folosit ca strat suplimentar de persistenÈ›Äƒ.</div>
+ <div class="row"><b>💾 Date & backup</b></div>
+ <div class="toolbar" style="margin-top:9px"><button onclick="exportBackup()">⇧ Backup JSON</button><button onclick="document.getElementById('backup').click()">⇩ Restaurare JSON</button><input id="backup" class="hidden" type="file" accept="application/json" onchange="importBackup(event)"></div>
+ <div class="notice">Backup-ul JSON este recomandat înainte de orice modificare majorÄƒ. Aplicația salveazÄƒ și local, iar IndexedDB este folosit ca strat suplimentar de persistență.</div>
 </section>
 </div>
 
-<div class="bottom"><div><button onclick="newAccount()">ï¼‹ Nou</button><button onclick="editAccount()">âœŽ EditeazÄƒ</button><button onclick="exportCSV()">â‡© Export</button></div></div>
-<div id="modal" class="modal hidden"><div class="modalbox"><div class="row"><b id="modalTitle">Cont</b><button onclick="closeModal()">ÃŽnchide</button></div><div id="modalBody" style="margin-top:12px"></div></div></div>
+<div class="bottom"><div><button onclick="newAccount()">＋ Nou</button><button onclick="editAccount()">✎ EditeazÄƒ</button><button onclick="exportCSV()">⇩ Export</button></div></div>
+<div id="modal" class="modal hidden"><div class="modalbox"><div class="row"><b id="modalTitle">Cont</b><button onclick="closeModal()">Închide</button></div><div id="modalBody" style="margin-top:12px"></div></div></div>
 
 <script>
 const KEY='usdtUltraFinalV1';
@@ -119,7 +119,7 @@ function calcChain(start,a,fromTx=0,toTx=null){
       if(global>endTx)break;
       const before=cur, gain=before/n(a.divisor||120)*(n(a.percent)/100), after=before+gain;
       cur=after;profit+=gain;tx++;
-      rows.push({day,tx:global,type:j<Math.floor(n(a.perDay))?'Normal':'ÃŽn plus',before,gain,after});
+      rows.push({day,tx:global,type:j<Math.floor(n(a.perDay))?'Normal':'În plus',before,gain,after});
     }
     if(global>=endTx)break;
   }
@@ -177,10 +177,10 @@ function renderAccounts(){
  return `<div class="acct ${String(a.id)===String(activeId)?'active':''}">
   <div class="row"><b>${esc(a.name)}</b><span class="tag">${n(a.percent)}%</span></div>
   <div class="bal">${money(shown)}</div>
-  <div class="green">Real: ${a.real==null?'â€”':money(a.real)}</div>
-  <div class="muted">ðŸ“… Ziua ${c.currentDay} din ${c.days} Â· ${esc(a.startDate)}</div>
-  <div class="muted">ðŸ”„ ${Math.floor(n(a.perDay))} normale + ${extraForDay(a,c.currentDay)} Ã®n plus / zi</div>
-  <div class="stats" style="margin-top:8px"><div class="stat"><small>TranzacÈ›ii efectuate</small><b>${c.currentTx}</b></div><div class="stat"><small>RÄƒmase</small><b>${c.remaining}</b></div></div>
+  <div class="green">Real: ${a.real==null?'—':money(a.real)}</div>
+  <div class="muted">📅 Ziua ${c.currentDay} din ${c.days} · ${esc(a.startDate)}</div>
+  <div class="muted">🔄 ${Math.floor(n(a.perDay))} normale + ${extraForDay(a,c.currentDay)} în plus / zi</div>
+  <div class="stats" style="margin-top:8px"><div class="stat"><small>Tranzacții efectuate</small><b>${c.currentTx}</b></div><div class="stat"><small>RÄƒmase</small><b>${c.remaining}</b></div></div>
   <div class="progress" style="margin-top:8px"><div class="bar" style="width:${Math.min(100,c.currentDay/c.days*100)}%"></div></div>
   <div class="actions"><button onclick="selectAccount('${a.id}')">${String(a.id)===String(activeId)?'Selectat':'Deschide'}</button><button onclick="editAccount('${a.id}')">Edit</button></div>
  </div>`}).join('')
@@ -189,31 +189,31 @@ function renderAccounts(){
 function renderDash(){
  const a=active(),d=document.getElementById('dash');if(!a){d.innerHTML='<div class="muted">CreeazÄƒ un cont.</div>';return}
  const c=calculate(a),diff=a.real==null?null:n(a.real)-c.originalToday;
- d.innerHTML=`<div class="row"><div><b>${esc(a.name)}</b><div class="muted">Ziua ${c.currentDay} din ${c.days} Â· Ã®nceput ${esc(a.startDate)} Â· ${c.currentTx} tranzacÈ›ii efectuate</div></div><span class="tag">${n(a.percent)}% / ${n(a.divisor)}</span></div>
+ d.innerHTML=`<div class="row"><div><b>${esc(a.name)}</b><div class="muted">Ziua ${c.currentDay} din ${c.days} · început ${esc(a.startDate)} · ${c.currentTx} tranzacții efectuate</div></div><span class="tag">${n(a.percent)}% / ${n(a.divisor)}</span></div>
  <div class="three">
-  <div class="v today"><small>Actual azi Â· teoretic</small><strong>${money(c.originalToday)}</strong></div>
-  <div class="v real"><small>Sold real pe cont</small><strong>${a.real==null?'â€”':money(a.real)}</strong></div>
-  <div class="v final"><small>ProiecÈ›ie finalÄƒ</small><strong>${money(c.final)}</strong></div>
+  <div class="v today"><small>Actual azi · teoretic</small><strong>${money(c.originalToday)}</strong></div>
+  <div class="v real"><small>Sold real pe cont</small><strong>${a.real==null?'—':money(a.real)}</strong></div>
+  <div class="v final"><small>Proiecție finalÄƒ</small><strong>${money(c.final)}</strong></div>
  </div>
  <div class="stats" style="margin-top:10px">
-  <div class="stat"><small>CÃ¢È™tig tranzacÈ›ii pÃ¢nÄƒ azi</small><b class="green">+${fmt(c.originalProfit)}</b></div>
+  <div class="stat"><small>Câștig tranzacții pÃ¢nÄƒ azi</small><b class="green">+${fmt(c.originalProfit)}</b></div>
   <div class="stat"><small>Bonusuri pÃ¢nÄƒ azi</small><b class="gold">+${fmt(bonusTotalBeforeToday(a))}</b></div>
-  <div class="stat"><small>TranzacÈ›ii efectuate</small><b>${c.currentTx}</b></div>
-  <div class="stat"><small>TranzacÈ›ii rÄƒmase</small><b>${c.remaining}</b></div>
+  <div class="stat"><small>Tranzacții efectuate</small><b>${c.currentTx}</b></div>
+  <div class="stat"><small>Tranzacții rÄƒmase</small><b>${c.remaining}</b></div>
  </div>
  <div style="margin-top:10px"><div class="row"><span class="muted">Progres perioadÄƒ</span><b>${(c.currentDay/c.days*100).toFixed(1)}%</b></div><div class="progress" style="margin-top:5px"><div class="bar" style="width:${Math.min(100,c.currentDay/c.days*100)}%"></div></div></div>
- ${diff==null?'<div class="notice">Introdu soldul real actual pentru a vedea diferenÈ›a exactÄƒ.</div>':`<div class="alert ${Math.abs(diff)<0.005?'ok':''}" style="margin-top:10px"><div class="muted">DIFERENÈšÄ‚ SOLD REAL vs. TEORIE AZI</div><div class="${diff<0?'red':'green'} big">${diff>=0?'+':''}${fmt(diff)} USDT</div><div class="muted">Real ${fmt(a.real)} Â· Teoretic azi ${fmt(c.originalToday)}</div></div>`}
- ${a.recalibration?`<div class="notice">ðŸ”„ Recalibrat de la ${fmt(a.recalibration.base)} USDT dupÄƒ ${a.recalibration.txCount} tranzacÈ›ii (${a.recalibration.date}). ProiecÈ›ia foloseÈ™te aceastÄƒ bazÄƒ doar pentru tranzacÈ›iile rÄƒmase.</div>`:''}`;
+ ${diff==null?'<div class="notice">Introdu soldul real actual pentru a vedea diferența exactÄƒ.</div>':`<div class="alert ${Math.abs(diff)<0.005?'ok':''}" style="margin-top:10px"><div class="muted">DIFERENȚĂ SOLD REAL vs. TEORIE AZI</div><div class="${diff<0?'red':'green'} big">${diff>=0?'+':''}${fmt(diff)} USDT</div><div class="muted">Real ${fmt(a.real)} · Teoretic azi ${fmt(c.originalToday)}</div></div>`}
+ ${a.recalibration?`<div class="notice">🔄 Recalibrat de la ${fmt(a.recalibration.base)} USDT dupÄƒ ${a.recalibration.txCount} tranzacții (${a.recalibration.date}). Proiecția folosește aceastÄƒ bazÄƒ doar pentru tranzacțiile rÄƒmase.</div>`:''}`;
  document.getElementById('fStart').value=a.initial;document.getElementById('fPct').value=a.percent;document.getElementById('fDiv').value=a.divisor;document.getElementById('fNormal').value=a.perDay;document.getElementById('fExtra').value=a.extraPerDay||0;document.getElementById('fDays').value=a.days;document.getElementById('fDate').value=a.startDate;document.getElementById('fReal').value=a.real??'';
- document.getElementById('calcMessage').textContent=`Azi: ziua ${c.currentDay}/${c.days} Â· ${c.currentTx} tranzacÈ›ii efectuate Â· ${c.remaining} rÄƒmase.`;
+ document.getElementById('calcMessage').textContent=`Azi: ziua ${c.currentDay}/${c.days} · ${c.currentTx} tranzacții efectuate · ${c.remaining} rÄƒmase.`;
 }
 function renderBonuses(){
  const a=active(),box=document.getElementById('bonuses');if(!a){box.innerHTML='';return}
- box.innerHTML=(a.bonuses||[]).map((b,i)=>`<div class="bonus"><div class="row"><b>${esc(b.name||'Bonus')}</b><button class="danger" onclick="removeBonus(${i})">È˜terge</button></div><div class="bonusgrid" style="margin-top:8px"><div><label>Nume</label><input value="${esc(b.name||'')}" onchange="editBonus(${i},'name',this.value)"></div><div><label>SumÄƒ USDT</label><input type="number" step="0.000001" value="${n(b.amount)}" onchange="editBonus(${i},'amount',this.value)"></div><div><label>Data</label><input type="date" value="${esc(b.date||todayISO())}" onchange="editBonus(${i},'date',this.value)"></div><div><label>NotÄƒ</label><input value="${esc(b.note||'')}" onchange="editBonus(${i},'note',this.value)"></div></div></div>`).join('')||'<div class="muted" style="padding:10px">Niciun bonus.</div>';
+ box.innerHTML=(a.bonuses||[]).map((b,i)=>`<div class="bonus"><div class="row"><b>${esc(b.name||'Bonus')}</b><button class="danger" onclick="removeBonus(${i})">Șterge</button></div><div class="bonusgrid" style="margin-top:8px"><div><label>Nume</label><input value="${esc(b.name||'')}" onchange="editBonus(${i},'name',this.value)"></div><div><label>SumÄƒ USDT</label><input type="number" step="0.000001" value="${n(b.amount)}" onchange="editBonus(${i},'amount',this.value)"></div><div><label>Data</label><input type="date" value="${esc(b.date||todayISO())}" onchange="editBonus(${i},'date',this.value)"></div><div><label>NotÄƒ</label><input value="${esc(b.note||'')}" onchange="editBonus(${i},'note',this.value)"></div></div></div>`).join('')||'<div class="muted" style="padding:10px">Niciun bonus.</div>';
 }
 function renderExtras(){
  const a=active(),box=document.getElementById('extras');if(!a)return;
- box.innerHTML=`<div class="notice">SeteazÄƒ cÃ¢te tranzacÈ›ii Ã®n plus existÄƒ Ã®n fiecare zi. Acestea intrÄƒ Ã®n compunere, nu sunt bonusuri monetare.</div>`+
+ box.innerHTML=`<div class="notice">SeteazÄƒ cÃ¢te tranzacții în plus existÄƒ în fiecare zi. Acestea intrÄƒ în compunere, nu sunt bonusuri monetare.</div>`+
  Array.from({length:a.days},(_,i)=>`<div class="row" style="padding:6px 0;border-bottom:1px solid #202a3d"><span>Ziua ${i+1}</span><input style="width:90px" type="number" min="0" value="${extraForDay(a,i+1)}" onchange="setExtra(${i+1},this.value)"></div>`).join('');
 }
 function renderTable(){
