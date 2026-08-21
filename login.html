@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#080b14">
+<title>USDT Control Ultra — Conectare</title>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<link rel="manifest" href="manifest.json">
+<style>
+:root{--bg:#070a12;--card:#111827;--line:#26344e;--txt:#f5f7fb;--mut:#8f9db4;--purple:#7657ff;--green:#35d07f;--red:#ff6874;--gold:#f4c453}
+*{box-sizing:border-box}html,body{min-height:100%;margin:0}body{background:radial-gradient(circle at 50% 0,#251957 0,#080b14 40%,#05070d 100%);color:var(--txt);font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;display:grid;place-items:center;padding:20px}
+.auth{width:100%;max-width:430px}.authbox{background:linear-gradient(145deg,#121a2b,#0b111d);border:1px solid var(--line);border-radius:24px;padding:24px;box-shadow:0 25px 80px #0008}.logo{width:62px;height:62px;border-radius:18px;display:grid;place-items:center;background:linear-gradient(135deg,#8e72ff,#543bd1);font-size:30px;font-weight:950;margin-bottom:18px}.authbrand{font-size:25px;font-weight:950;letter-spacing:-.5px}.authsub{font-size:12px;color:var(--mut);margin:6px 0 22px;line-height:1.5}.grid{display:grid;gap:12px}label{font-size:10px;text-transform:uppercase;color:#aab6ca;font-weight:800;display:block;margin-bottom:5px}input{width:100%;background:#080e18;color:#fff;border:1px solid var(--line);border-radius:12px;padding:13px;font-size:15px;outline:0}input:focus{border-color:var(--purple);box-shadow:0 0 0 3px #7657ff22}.authactions{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-top:15px}button{border:1px solid var(--line);background:#1a2438;color:#fff;border-radius:12px;padding:12px;font-weight:850;cursor:pointer}button.primary{border:0;background:linear-gradient(135deg,#8062ff,#5940d7);box-shadow:0 7px 22px #7255ff35}.authmsg{min-height:20px;margin-top:14px;font-size:12px;color:#b9c6da}.authmsg.err{color:var(--red)}.authmsg.ok{color:var(--green)}.authsmall{margin-top:15px;padding-top:14px;border-top:1px solid #202a3d;color:#73829b;font-size:10px;line-height:1.5;text-align:center}
+</style></head>
+<body><main class="auth"><section class="authbox"><div class="logo">₮</div><div class="authbrand">USDT Control Ultra</div><div class="authsub">Conectează-te pentru a accesa conturile, bonusurile și istoricul tău.</div><div class="grid"><div><label>Username</label><input id="authUser" autocomplete="username" value="Admin" placeholder="ex. Admin"></div><div><label>Parolă</label><input id="authPass" type="password" autocomplete="current-password" placeholder="Parola"></div></div><div class="authactions"><button class="primary" onclick="cloudLogin()">🔐 Intră</button><button onclick="cloudSignup()">＋ Creează cont</button></div><div id="authMsg" class="authmsg">Datele sunt sincronizate separat pentru utilizatorul conectat.</div><div class="authsmall">După autentificare vei fi trimis automat în aplicația principală.</div></section></main>
+<script>
+const SUPABASE_URL='https://jhpuudtklnuftwqpbpwh.supabase.co';
+const SUPABASE_KEY='sb_publishable_3ziVfaX3kKrvXZIPQqUmMA_IBhjWCuD';
+const sb=window.supabase.createClient(SUPABASE_URL,SUPABASE_KEY,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true}});
+function usernameEmail(u){return String(u||'').trim().toLowerCase().replace(/[^a-z0-9._-]/g,'')+'@usdtcontrol.app'}
+function setAuthMsg(text,err=false,ok=false){const el=document.getElementById('authMsg');el.textContent=text;el.className='authmsg'+(err?' err':'')+(ok?' ok':'')}
+async function goApp(){setAuthMsg('Conectat. Se deschide aplicația...',false,true);setTimeout(()=>location.replace('./index.html'),250)}
+async function cloudLogin(){const u=document.getElementById('authUser').value.trim(),p=document.getElementById('authPass').value;if(!u||!p)return setAuthMsg('Completează username și parola.',true);setAuthMsg('Se conectează...');const {data,error}=await sb.auth.signInWithPassword({email:usernameEmail(u),password:p});if(error)return setAuthMsg(error.message,true);await goApp()}
+async function cloudSignup(){const u=document.getElementById('authUser').value.trim(),p=document.getElementById('authPass').value;if(!/^[a-zA-Z0-9._-]{3,32}$/.test(u))return setAuthMsg('Username: 3–32 caractere, litere/cifre . _ -',true);if(p.length<8)return setAuthMsg('Parola trebuie să aibă cel puțin 8 caractere.',true);setAuthMsg('Se creează utilizatorul...');const {data,error}=await sb.auth.signUp({email:usernameEmail(u),password:p,options:{data:{username:u}}});if(error)return setAuthMsg(error.message,true);if(!data.session)return setAuthMsg('Utilizator creat. Dezactivează confirmarea email în Supabase Auth pentru login fără email.',true);await goApp()}
+(async()=>{const {data}=await sb.auth.getSession();if(data.session)location.replace('./index.html')})();
+</script></body></html>
